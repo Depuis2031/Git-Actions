@@ -5,8 +5,8 @@ on:
 
 jobs:
  run-shel-commands:
- runs-on: ubuntu-latest
- steps:
+   runs-on: ubuntu-latest
+   steps:
    - name: echo string
      run: echo "peace-be"
    - name: multi line string
