@@ -5,19 +5,17 @@ on:
 
 jobs:
   terraform-workflow:
-   runs-on: ubuntu-latest
-   steps:
-   - name: Checkout
-     uses: actions/checkout@v1
-   - name: Terraform
-     uses: hashicorp/setup-terraform@v2
-     with:
-       terraform_version: 1.1.9
-   - name : Terraform init
-     run: terraform init
-   - name: Terraform init
-     run: terraform init  
-    - name: Terraform plan
-     run: terraform plan
-
-        
+    runs-on: ubuntu-latest
+    steps:
+    -  name: Checkout
+       uses: actions/checkout@v1
+    -  name: Set Terraform
+       uses: hashicorp/setup-terraform@v2
+       with:
+          terraform_version: 1.1.9
+    -  name: Terraform init
+       run: terraform init
+    -  name: Teraform validate
+       run: terraform validate
+    -  name: Terraform plan
+       run: terraform plan
