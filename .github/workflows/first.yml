@@ -4,7 +4,7 @@ on:
   - push
 
 jobs:
- run-shel-commands:
+ run-shell-commands:
    runs-on: ubuntu-latest
    steps:
    - name: echo string
@@ -19,3 +19,10 @@ jobs:
        import platform
        print(platform.processor())
      shell: python
+ run-windows-commands:
+   runs-on: windows-latest 
+   steps:
+   - name: Directory
+     run: pwd
+     shell: bash  
+        
