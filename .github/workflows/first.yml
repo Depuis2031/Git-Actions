@@ -15,7 +15,7 @@ jobs:
        node -v
        ls -a
    - name: python command 
-     run:
+     run: |
        import platform
        print(platform.processor())
      shell: python
