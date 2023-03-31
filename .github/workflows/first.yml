@@ -1,0 +1,16 @@
+name: shell command
+
+on:
+  - push
+
+jobs:
+ run-shel-commands:
+ run-on: ubuntu-latest
+ steps:
+   - name: echo string
+     run: echo "peace-be"
+   - name: multi line string
+     run: |
+       pwd
+       node -v
+       ls -a
