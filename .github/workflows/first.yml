@@ -2,7 +2,10 @@ name: shell command
 
 on:
   - push
-
+env:
+   AWS_ACESS_KEY: ${{ secrets.AWS_ACESS_KEY }}
+   AWS_ACESS_SECRET_KEY: ${{ secrets.AWS_ACESS_SECRET_KEY }}
+   
 jobs:
   terraform-workflow:
     runs-on: ubuntu-latest
