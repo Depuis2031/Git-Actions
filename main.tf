@@ -7,7 +7,7 @@ resource "aws_vpc" "actions" {
     cidr_block = "10.0.0.0/20"
 
     tags = {
-      Name = tabe237
+      Name = "tabe237"
     }
 }
 
