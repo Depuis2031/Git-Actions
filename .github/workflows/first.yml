@@ -30,7 +30,7 @@ jobs:
     #   run: terraform apply   -auto-approve
     #-  name: Terraform  destroy
     #   run: terraform destroy  -auto-approve 
-    -  name: release
+    -  name: releases
        run: npx semantic-release
        env:
          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
