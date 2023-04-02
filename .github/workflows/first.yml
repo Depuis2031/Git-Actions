@@ -28,9 +28,11 @@ jobs:
        run: terraform plan
     #-  name: Terraform apply
     #   run: terraform apply   -auto-approve
+        if : github.event_name == 'push' && github.ref == 'refs/heads/main'
     #-  name: Terraform  destroy
      # run: terraform destroy  -auto-approve 
-    -  name: releases
+    -  name: release
+       if : github.event_name == 'push' && github.ref == 'refs/heads/main'
        run: npx semantic-release
        env:
          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
