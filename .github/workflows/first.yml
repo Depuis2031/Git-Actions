@@ -22,7 +22,11 @@ jobs:
        run: terraform  fmt
     -  name: Terraform plan
        run: terraform plan
-    -  name: Terraform apply
-       run: terraform apply   -auto-approve
-    -  name: Terraform  destroy
-       run: terraform destroy  -auto-approve 
+    #-  name: Terraform apply
+    #   run: terraform apply   -auto-approve
+    #-  name: Terraform  destroy
+    #   run: terraform destroy  -auto-approve 
+    -  name: release
+       run: npx semantic-release
+       env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
