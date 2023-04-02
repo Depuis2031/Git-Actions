@@ -9,6 +9,7 @@ resource "aws_vpc" "actions" {
     Name = "tabe237"
     Team = "DevOps"
     Environment   = "Dev"
+    Division = "HR"
   }
 
 }
