@@ -22,17 +22,17 @@ jobs:
           terraform_version: 1.1.9
     -  name: Terraform init
        run: terraform init
-    -  name: Terraform fmt 
-       run: terraform fmt
+    -  name: Terraform validate
+       run: terraform validate
     -  name: Terraform plan
        run: terraform plan
     #-  name: Terraform apply
     #   run: terraform apply   -auto-approve
-        if : github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     #-  name: Terraform  destroy
      # run: terraform destroy  -auto-approve 
     -  name: release
-       if : github.event_name == 'push' && github.ref == 'refs/heads/main'
+       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
        run: npx semantic-release
        env:
          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
